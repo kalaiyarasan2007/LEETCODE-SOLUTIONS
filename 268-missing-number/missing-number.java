@@ -1,0 +1,25 @@
+/*class Solution {
+    public int missingNumber(int[] nums) {
+        int n=nums.length;
+        int sum=n*(n+1)/2;
+        int s=0;
+        for(int i=0;i<n;i++){
+            s=s+nums[i];
+        }
+        return (sum-s);
+    }
+}
+*/
+class Solution {
+    public int missingNumber(int[] nums) {
+        int n=nums.length;
+        int xor=0;
+        for(int i=0;i<n;i++){
+            xor=xor^(i+1);
+            xor =xor^nums[i];
+            
+        }
+        return xor;
+    }
+
+}
